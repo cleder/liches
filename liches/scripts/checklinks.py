@@ -77,7 +77,7 @@ def main(argv=sys.argv):
                     if line[0].startswith('#'):
                         continue
                     else:
-                        line[10] = line[10].decode('UTF-8')
+                        line = [v.decode('UTF-8') for v in line]
                     checked_link = CheckedLink( *line)
                     DBSession.add(checked_link)
             except:
